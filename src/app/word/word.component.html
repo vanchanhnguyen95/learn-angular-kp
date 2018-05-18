@@ -1,0 +1,9 @@
+<h3 [hidden] = "forgot">This is WordComponent </h3>
+<h2>{{en}}</h2>
+<h1>{{vn}}</h1>
+
+<p>Hình ảnh cách 1</p>  <img src="{{imgUrl}}" alt="Hình ảnh cách 1">
+<p>Hình ảnh cách 2</p>  <img [src]="imgUrl" alt="Hình ảnh cách 2">
+
+<button (click)= "forgot = !forgot">Toogle forgot 1</button>
+<button (click)= "toggleForgot()">Toogle forgot 2</button>

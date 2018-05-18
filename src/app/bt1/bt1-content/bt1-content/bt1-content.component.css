@@ -1,0 +1,13 @@
+.content-1, .content-2{
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+.content-1{
+    background-color: yellowgreen;
+}
+.content-2{
+    background-color:blue;
+}

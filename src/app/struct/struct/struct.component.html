@@ -1,0 +1,31 @@
+<div class="container">
+  <p *ngIf="isShow">
+    struct works!
+  </p>
+  <button (click)="isShow = !isShow" class="btn btn-danger">*ngIf</button>
+
+  <p>*ngFor</p>
+  <ul>
+    <li *ngFor="let subject of arrSubjects">
+      <p>{{'Subject: ' + subject }}</p>
+    </li>
+  </ul>
+
+  <div *ngIf="isShowForm" >
+    <h1>Hiển thị từ điển</h1>
+    <input placeholder="English" [(ngModel)]="newEn" />
+    <br>
+    <input placeholder="Vietnamese" [(ngModel)]="newVn" />
+    <br>
+    <button class="btn" (click)="addWord()">Thêm từ mới</button>
+  </div>
+
+  <button class="btn" (click)="isShowForm = true" *ngIf="!isShowForm">Thêm từ mới</button>
+  <div *ngFor="let word of arrWords" class="word">
+    <h2 [ngStyle]="{color: word.memorized ? 'green' : 'red'}"> {{ word.en}}</h2>
+    <p>{{ word.vn}}</p>
+    <button (click) = removeword(word.id) class="btn btn-danger">Xóa</button>
+  </div>
+
+
+</div>

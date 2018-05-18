@@ -1,0 +1,10 @@
+<input value="{{name}}">
+<br>
+<input [value] = 'bien'>
+<br>
+<input type="text" #thamso>
+<button (click) = 'DisplayName(thamso)'>Submit</button>
+<input [value]= 'thamso.value'>
+<br>
+<input placeholder="ngModel" [(ngModel)] = "ng" >{{ng}}
+

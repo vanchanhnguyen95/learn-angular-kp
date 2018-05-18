@@ -1,0 +1,29 @@
+<!-- <input placeholder="Enter user name" (keyup) = "showEvent($event)"> -->
+
+<input placeholder="Enter user name" [(ngModel)]= "name" #txtUsername>
+<input placeholder="Enter password" (keyup) = "showPassword($event)" >
+
+<button (click) = "password">Click</button>
+<h3 [ngStyle] = "name.length % 2 === 0 ? evenStyle : oddStyle"
+>
+    Your name is: {{ name }}
+</h3>
+
+<h3>Password is: {{ password }}</h3>
+
+
+<h3>Template reference variable </h3>
+<code>{{txtUsername.value | json}}</code>
+
+<h1>Style binding và class binding </h1>
+
+<div [class] ="isHightlight ?  'circle' : 'square' ">
+
+</div>
+
+<div [class.circle] = "'isHightlight'">
+</div>
+
+<p>ngClass</p>
+<div [ngClass] = "currentClass"></div>
+
