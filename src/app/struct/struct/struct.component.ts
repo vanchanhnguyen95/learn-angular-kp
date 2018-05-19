@@ -46,5 +46,5 @@ export class StructComponent implements OnInit {
     this.arrWords.splice(index, 1);
   }
 
-
+  filterStatus = "XEM_TAT_CA";
 }

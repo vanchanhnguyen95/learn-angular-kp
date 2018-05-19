@@ -11,7 +11,7 @@
     </li>
   </ul>
 
-  <div *ngIf="isShowForm" >
+  <div *ngIf="isShowForm">
     <h1>Hiển thị từ điển</h1>
     <input placeholder="English" [(ngModel)]="newEn" />
     <br>
@@ -19,12 +19,21 @@
     <br>
     <button class="btn" (click)="addWord()">Thêm từ mới</button>
   </div>
+  <br>
+  <select [(ngModel)]="filterStatus">
+    <option value="XEM_TAT_CA">Xem tất cả</option>
+    <option value="XEM_DA_NHO">Xem từ đã nhớ</option>
+    <option value="XEM_CHUA_NHO">Xem từ chưa nhớ</option>
+  </select>
+  <br>
 
   <button class="btn" (click)="isShowForm = true" *ngIf="!isShowForm">Thêm từ mới</button>
-  <div *ngFor="let word of arrWords" class="word">
-    <h2 [ngStyle]="{color: word.memorized ? 'green' : 'red'}"> {{ word.en}}</h2>
-    <p>{{ word.vn}}</p>
-    <button (click) = removeword(word.id) class="btn btn-danger">Xóa</button>
+  <div *ngFor="let word of arrWords">
+    <div class="word" *ngIf="filterStatus === 'XEM_TAT_CA' || (filterStatus === 'XEM_DA_NHO') || (filterStatus === 'XEM_CHUA_NHO')">
+      <h3 [ngStyle]="{color: word.memorized ? 'green' : 'red'}"> {{ word.en}}</h3>
+      <p>{{ word.vn}}</p>
+      <button (click)=r emoveword(word.id) class="btn btn-danger">Xóa</button>
+    </div>
   </div>
 
 
